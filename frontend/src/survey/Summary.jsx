@@ -5,7 +5,13 @@ import { useNavigate } from 'react-router';
 export default function Summary() {
   //문제 정보
   const [question, setQuestion] = useState([]);
+  //설문결과정보
+  const navigate = useNavigate();
+  const [items, setItems] = useState([]);
+
+  //이름있는함수, 익명함수, 화살표 함수
   function getQuestion(url) {
+    //비동기 처리방식
     fetch(url)
       .then((response) => {
         return response.json();
@@ -20,9 +26,8 @@ export default function Summary() {
   useEffect(() => {
     getQuestion(url);
   }, []);
-  //설문결과정보
-  const navigate = useNavigate();
-  const [items, setItems] = useState([]);
+
+  //통계정보를 가져오는 함수
   function getList(url) {
     fetch(url)
       .then((response) => {

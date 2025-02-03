@@ -11,6 +11,11 @@ import Count from './test/Count';
 import Loop from './test/Loop';
 import Question from './survey/Question';
 import Summary from './survey/Summary';
+import ListMemo from './memo/ListMemo';
+import DetailMemo from './memo/DetailMemo';
+import ListGuestbook from './guestbook/ListGuestbook';
+import WriteGuestbook from './guestbook/WriteGuestbook';
+import DetailGuestbook from './guestbook/DetailGuestbook';
 
 function App() {
   console.warn = function no_console() {}; //콘솔창에 경고내용을 보여주지 마라
@@ -29,6 +34,16 @@ function App() {
           {/* 설문조사-동길팀원 */}
           <Route path="/survey/question" element={<Question />} />
           <Route path="/survey/summary" element={<Summary />} />
+          {/* 메모장 -  */}
+          <Route path="/memo" element={<ListMemo />} />
+          <Route path="/memo/detail/:product_code" element={<DetailMemo />} />
+          {/* 방명록 */}
+          <Route path="/guestbook" element={<ListGuestbook />} />
+          <Route path="/guestbook/write" element={<WriteGuestbook />} />
+          <Route
+            path="/guestbook/detail/:product_code"
+            element={<DetailGuestbook />}
+          />
         </Routes>
       </BrowserRouter>
     </>
