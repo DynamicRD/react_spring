@@ -16,6 +16,9 @@ import DetailMemo from './memo/DetailMemo';
 import ListGuestbook from './guestbook/ListGuestbook';
 import WriteGuestbook from './guestbook/WriteGuestbook';
 import DetailGuestbook from './guestbook/DetailGuestbook';
+import ListProduct from './shop/ListProduct';
+import WriteProduct from './shop/WriteProduct';
+import DetailProduct from './shop/DetailProduct.jsx';
 
 function App() {
   console.warn = function no_console() {}; //콘솔창에 경고내용을 보여주지 마라
@@ -43,6 +46,14 @@ function App() {
           <Route
             path="/guestbook/detail/:product_code"
             element={<DetailGuestbook />}
+          />
+          {/* 상품목록 */}
+          <Route path="/product" element={<ListProduct />} />
+          <Route path="/product/list" element={<ListProduct />} />
+          <Route path="/product/write" element={<WriteProduct />} />
+          <Route
+            path="/product/detail/:product_code"
+            element={<DetailProduct />}
           />
         </Routes>
       </BrowserRouter>
